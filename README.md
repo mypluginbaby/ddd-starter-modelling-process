@@ -1,152 +1,152 @@
-# Domain-Driven Design Starter Modelling Process
+# Процесс моделирования начального проектирования на основе предметной области
 
-This process gives you a step-by-step guide for learning and practically applying each aspect of Domain-Driven Design (DDD) - from orienting around an organisation's business model to coding a domain model.
+Этот процесс дает вам пошаговое руководство по изучению и практическому применению каждого аспекта проектирования на основе предметной области (DDD) - от ориентации на бизнес-модель организации до кодирования модели предметной области.
 
-Using this process will guide you through each of the essential steps in designing a software system with the DDD mindset, so you can focus on your business challenges and not be overwhelmed by learning DDD at the same time.
+Использование этого процесса поможет вам выполнить каждый из основных этапов разработки программной системы с использованием DDD-мышления, чтобы вы могли сосредоточиться на своих бизнес-задачах и не быть перегруженными одновременным изучением DDD.
 
-Once you have been through a few iterations of the process you will have the foundational DDD theory and practical experience to go deeper into DDD. Then you will be able to adapt and improve the process to suit your needs in any context. On a real project you'll often be jumping back and forth between these steps.
+После того, как вы пройдете несколько итераций процесса, у вас будет основополагающая теория DDD и практический опыт, чтобы углубиться в DDD. Тогда вы сможете адаптировать и улучшить процесс в соответствии с вашими потребностями в любом контексте. В реальном проекте вы часто будете прыгать туда-сюда между этими шагами.
 
-> This process is for beginners. It is not a linear sequence of steps that you should standardise as a best practice. Domain-Driven Design is an evolutionary design process which necessitates continuous iteration on all aspects of knowledge and design.
+> Этот процесс предназначен для начинающих. Это не линейная последовательность шагов, которую вы должны стандартизировать в качестве наилучшей практики. Предметно-ориентированное проектирование - это эволюционный процесс проектирования, который требует непрерывной итерации по всем аспектам знаний и проектирования.
 
-![DDD Starter Modelling Process](resources/ddd-starter-modelling-process.jpg)
+![Процесс моделирования DDD-стартера](resources/ddd-starter-modelling-process.jpg )
 
-__Navigation:__
+__навигация:__
 
-* [When to use the DDD Starter Modelling Process?](#when-to-use-the-ddd-starter-modelling-process)
-  * [Kicking Off a Greenfield Project](#kicking-off-a-greenfield-project)
-  * [Beginning a Brownfield Migration](#beginning-a-brownfield-migration)
-  * [Kicking Off a Major Program of Work](#kicking-off-a-major-program-of-work)
-  * [Explore Your Domain for New Learning Opportunities](#explore-your-domain-for-new-learning-opportunities)
-  * [Assess Current State of Your Project](#assess-current-state-of-your-project)
-  * [Practicing or Learning DDD](#practicing-or-learning-ddd)
-* [How to Adapt the Process?](#how-to-adapt-the-process)
-  * [Start with Collaborative Modelling](#start-with-collaborative-modelling)
-  * [Start by Assessing IT Landscape](#start-by-assessing-it-landscape)
-  * [Code Before Confirming Architecture and Team Boundaries](#code-before-confirming-architecture-and-team-boundaries)
-  * [Repeat Steps 2 (Discover) - 6 (Organise) Before Moving to 7 (Define)](#repeat-steps-2-discover---6-organise-before-moving-to-7-define)
-  * [Organise Teams Before Designing Contexts](#organise-teams-before-designing-contexts)
-  * [Blending Definition and Coding](#blending-definition-and-coding)
-* [The Process](#the-process)
-  * [Understand](#understand)
-  * [Discover](#discover)
-  * [Decompose](#decompose)
-  * [Connect](#connect)
-  * [Strategize](#strategize)
-  * [Organise](#organise)
-  * [Define](#define)
-  * [Code](#code)
-* [Contributors](#contributors)
-* [Contributions and Feedback](#contributions-and-feedback)
+* [Когда следует использовать процесс моделирования DDD-стартера?](#когда-использовать-процесс-моделирования-ddd-стартера)
+* [Запуск нового проекта] (#запуск нового проекта)
+* [Начало миграции на новое поле] (#начало миграции на новое поле)
+* [Начало основной программы работы] (#начало основной программы работы)
+* [Исследуйте Свой домен в поисках новых возможностей для обучения] (#исследуйте свой домен в поисках новых возможностей для обучения)
+* [Оценить текущее состояние Вашего проекта] (#оценить текущее состояние вашего проекта)
+* [Практика или изучение DDD] (#практика или изучение ddd)
+* [Как адаптировать процесс?](#как-адаптировать-процесс)
+* [Начать с совместного моделирования] (#начать с совместного моделирования)
+* [Начните с оценки ИТ-ландшафта] (#начните с оценки ИТ-ландшафта)
+* [Код до подтверждения границ архитектуры и команды] (#код до подтверждения границ архитектуры и команды)
+* [Повторите шаги 2 (Обнаружение) - 6 (Организация) Перед переходом к 7 (Определение)] (#повторите шаги-2-обнаружение---6- организуйте-перед-переходом-к-7-определению)
+* [Организуйте команды Перед проектированием контекстов] (#организуйте-команды-перед-проектированием-контекстов)
+* [Определение и кодирование смешивания] (#определение и кодирование смешивания)
+* [Процесс](#процесс)
+* [Понять](#понять)
+* [Открыть](#открыть)
+* [Разложить](#разложить)
+* [Подключиться](#подключиться)
+* [Разработать стратегию] (#разработать стратегию)
+* [Организовать](#организовать)
+* [Определить](#определить)
+* [Код](#код)
+* [Участники](#участники)
+* [Вклады и отзывы] (#вклады и отзывы)
 
-## When to use the DDD Starter Modelling Process?
+## Когда следует использовать процесс моделирования DDD-стартера?
 
-If you're new to DDD or just not sure where to start, this process can reduce your cognitive load. It will guide you through following scenarios, and possibly others:
+Если вы новичок в DDD или просто не знаете, с чего начать, этот процесс может снизить вашу когнитивную нагрузку. Он проведет вас через следующие сценарии и, возможно, другие:
 
-### Kicking Off a Greenfield Project
+### Запуск Нового проекта
 
-At the start of a new project the number of things you need to think about can be overwhelming. One or two iterations of this process can help you put the foundations in place.
+В начале нового проекта количество вещей, о которых вам нужно подумать, может быть огромным. Одна или две итерации этого процесса могут помочь вам заложить основы.
 
-### Beginning a Brownfield Migration
+### Начало миграции на новое поле
 
-Before getting to work on modernising your legacy system, a few iterations of this process can help you to uncover essential information needed to create a vision for your target architecture.
+Прежде чем приступить к модернизации вашей устаревшей системы, несколько итераций этого процесса могут помочь вам получить важную информацию, необходимую для создания видения вашей целевой архитектуры.
 
-### Kicking Off a Major Program of Work
+### Начало основной программы работы
 
-When starting a new initiative involves a significant investment across many teams, it is essential to cover the 8 steps in the process. This process can guide you through the first few iterations.
+Когда запуск новой инициативы предполагает значительные инвестиции во многих командах, важно выполнить 8 этапов процесса. Этот процесс может провести вас через первые несколько итераций.
 
-### Explore Your Domain for New Learning Opportunities
+### Исследуйте Свой Домен в поисках новых возможностей для обучения
 
-Software development is a learning process. You can apply the DDD Starter Modelling Process at any time to uncover new insights, identify new opportunities, or simply share knowledge around the team.
+Разработка программного обеспечения - это процесс обучения. Вы можете применить процесс моделирования DDD Starter в любое время, чтобы раскрыть новые идеи, определить новые возможности или просто поделиться знаниями с командой.
 
-### Assess Current State of Your Project
+### Оцените текущее состояние Вашего проекта
 
-This process can be the foundation for assessing how well your current system is aligned to the domain and business model. 
+Этот процесс может стать основой для оценки того, насколько хорошо ваша текущая система соответствует предметной области и бизнес-модели.
 
-### Re-organising Teams
+### Реорганизация команд
 
-A loosely-coupled architecture enables teams to work in parallel without being blocked. A loosely-coupled architecture also must be aligned to coupling in the domain. This process will help you to design a software architecture, and a team structure aligned with your domain.
+Слабо связанная архитектура позволяет командам работать параллельно, не блокируясь. Слабосвязанная архитектура также должна быть согласована со связью в домене. Этот процесс поможет вам разработать архитектуру программного обеспечения и структуру команды, соответствующую вашему домену.
 
-### Practicing or Learning DDD
+### Практика или изучение DDD
 
-This process is ideal when you are new to DDD and want to practice, or you want to teach others the different aspects of modelling a domain. It's important to communicate that this linear process is not a realistic process. It's just a starting point to reduce cognitive load until you are confident with DDD.
+Этот процесс идеально подходит, когда вы новичок в DDD и хотите попрактиковаться или хотите научить других различным аспектам моделирования предметной области. Важно сообщить, что этот линейный процесс не является реалистичным процессом. Это всего лишь отправная точка для снижения когнитивной нагрузки, пока вы не будете уверены в DDD.
 
-## How to Adapt the Process?
+## Как адаптировать процесс?
 
-This process can be customised in many ways. On a real project, you'll be switching between all 8 steps based on the new insights you gain or need to gain.
+Этот процесс можно настроить многими способами. В реальном проекте вы будете переключаться между всеми 8 шагами на основе новых знаний, которые вы получаете или должны получить.
 
-Below are a few reasons for deciding when to change the order or switch between steps.
+Ниже приведены несколько причин для принятия решения о том, когда следует изменить порядок или переключиться между этапами.
 
-### Start with Collaborative Modelling
+### Начните с совместного моделирования
 
-If you want to get your whole team collaborating immediately, modelling the domain which they are familiar with might be more comfortable than talking about business models and strategy which they are less comfortable with.
+Если вы хотите, чтобы вся ваша команда немедленно начала сотрудничать, моделирование области, с которой они знакомы, может быть более удобным, чем разговор о бизнес-моделях и стратегии, которые им менее удобны.
 
-### Start by Assessing IT Landscape
+### Начните с оценки ИТ-ландшафта
 
-Before looking forward to the business vision and going deep into the domain, it might be better to visualise the existing architecture first. Start with step 5 and map out your strategic portfolio to see what the major constraints you will face are.
+Прежде чем переходить к бизнес-видению и углубляться в предметную область, возможно, было бы лучше сначала визуализировать существующую архитектуру. Начните с шага 5 и составьте свой стратегический портфель, чтобы увидеть, с какими основными ограничениями вы столкнетесь.
 
-### Code Before Confirming Architecture and Team Boundaries
+### Код Перед подтверждением Архитектуры и границ команды
 
-On some projects it makes sense to start by writing code sooner. Perhaps you need to deliver an MVP or the domain is so complex that creating a model in code is necessary before you can consider the architecture.
+В некоторых проектах имеет смысл начать с написания кода раньше. Возможно, вам нужно предоставить MVP или домен настолько сложен, что необходимо создать модель в коде, прежде чем вы сможете рассмотреть архитектуру.
 
-### Repeat Steps 2 (Discover) - 6 (Organise) Before Moving to 7 (Define)
+### Повторите шаги 2 (Обнаружение) - 6 (Организация), прежде чем перейти к 7 (Определение)
 
-Before you dive into the definition of individual bounded contexts, it may be beneficial to model the domain multiple times and look for different ways to decompose your system into sub-domains and teams.
+Прежде чем вы погрузитесь в определение отдельных ограниченных контекстов, может быть полезно несколько раз смоделировать домен и поискать различные способы разбиения вашей системы на поддомены и группы.
 
-### Organise Teams Before Designing Contexts
+### Организуйте Команды Перед Проектированием Контекстов
 
-For a great deal of projects there are organisational constraints that we need to take into account. If this is the case, you should consider identifying possible team structures before designing architectures that you will never be able to implement.
+Для многих проектов существуют организационные ограничения, которые мы должны учитывать. Если это так, вам следует рассмотреть возможность определения возможных командных структур, прежде чем разрабатывать архитектуры, которые вы никогда не сможете реализовать.
 
-### Blending Definition and Coding
+### Определение и кодирование смешивания
 
-Steps 7 (Define) and 8 (Code) can occur concurrently. This may happen when you are coding a bounded context, and the insights you get from writing code make you change the high-level design.
+Шаги 7 (Определение) и 8 (код) могут выполняться одновременно. Это может произойти, когда вы кодируете ограниченный контекст, и идеи, которые вы получаете при написании кода, заставляют вас изменить высокоуровневый дизайн.
 
-## The Process
+## Процесс
 
-The modelling process is composed of 8 steps which are introduced below.
+Процесс моделирования состоит из 8 этапов, которые представлены ниже.
 
-A good talk that gives an overview of the process in the context of typical phases of designing sociotechnical architectures is ["Sociotechnical Architecture: co-designing technical & organizational architecture to maximize impact"](https://www.youtube.com/watch?v=ekMPm78KFj0&feature=youtu.be&t=1820) by [Eduardo da Silva](@emgsilva). Eduardo groups the activities of the process and its 8 steps in [four distinct phases](https://speakerdeck.com/emgsilva/intro-to-sociotechnical-architecture-co-designing-technical-and-organizational-architecture-to-maximize-impact?slide=31), namely: 
-1. Align & Understand
-2. Strategic Architecture
-3. Strategy & Org Design
-4. Tactical Architecture.
+Хорошим докладом, в котором дается обзор процесса в контексте типичных этапов проектирования социотехнических архитектур, является ["Социотехническая архитектура: совместное проектирование технической и организационной архитектуры для максимального воздействия"](https://www.youtube.com/watch?v=ekMPm78KFj0&feature=youtu.be&t=1820) [Эдуардо да Силва] (@emgsilva). Эдуардо группирует действия процесса и его 8 этапов в [четыре отдельных phases](https://speakerdeck.com/emgsilva/intro-to-sociotechnical-architecture-co-designing-technical-and-organizational-architecture-to-maximize-impact?slide=31) , а именно:
+1. Выровняйте и поймите
+2. Стратегическая архитектура
+3. Стратегия и Организационный дизайн
+4. Тактическая архитектура.
 
 
-### Understand
+### Понять
 
-Align our focus with the organisation's business model, the needs of its users, and its short, medium, and long-term goals.
+Согласуйте наше внимание с бизнес-моделью организации, потребностями ее пользователей и ее краткосрочными, среднесрочными и долгосрочными целями.
 
-Every decision we take regarding the architecture, the code, or the organisation has business and user consequences. In order to design, build, and evolve software systems most effectively, our decisions need to create the optimal business impact, which can only be achieved if we are aligned to the business goals, as well as supporting the users current and potential future needs.
+Каждое решение, которое мы принимаем в отношении архитектуры, кода или организации, имеет последствия для бизнеса и пользователей. Для наиболее эффективного проектирования, создания и развития программных систем наши решения должны обеспечивать оптимальное воздействие на бизнес, которое может быть достигнуто только в том случае, если мы будем соответствовать бизнес-целям, а также поддерживать текущие и потенциальные будущие потребности пользователей.
 
-Badly designed architecture and/or boundaries can have a negative impact or even make it impossible to achieve these goals.
+Плохо спроектированная архитектура и/или границы могут оказать негативное влияние или даже сделать невозможным достижение этих целей.
 
-As a starting point, we recommend [The Business Model Canvas](https://www.strategyzer.com/canvas/business-model-canvas) for the business perpective, [User Story Mapping](https://www.jpattonassociates.com/user-story-mapping/) for understanding the user vantage point.
+В качестве отправной точки мы рекомендуем [Холст бизнес-модели](https://www.strategyzer.com/canvas/business-model-canvas ) для бизнес-перспективы [Сопоставление пользовательских историй](https://www.jpattonassociates.com/user-story-mapping /) для понимания точки зрения пользователя.
 
-![The Business Model Canvas](resources/business-model-canvas.png)
+![Холст бизнес-модели] (ресурсы/бизнес-модель-холст.png)
 
-#### Tools
+#### Инструменты
 
-- [Impact Mapping](https://www.impactmapping.org/)
-- [The Business Model Canvas](https://www.strategyzer.com/canvas/business-model-canvas)
-- [The Product Strategy Canvas](https://melissaperri.com/blog/2016/07/14/what-is-good-product-strategy)
-- [Wardley Mapping](https://learnwardleymapping.com/)
-- [User Story Mapping](https://www.jpattonassociates.com/user-story-mapping/)
+- [Картирование воздействия](https://www.impactmapping.org /)
+- [Холст бизнес-модели](https://www.strategyzer.com/canvas/business-model-canvas )
+- [Холст стратегии продукта](https://melissaperri.com/blog/2016/07/14/what-is-good-product-strategy )
+- [Отображение Уордли](https://learnwardleymapping.com /)
+- [Сопоставление пользовательских историй](https://www.jpattonassociates.com/user-story-mapping /)
 
-#### Who to Involve
+#### Кого привлекать
 
-- People who design, build, test software
-- People who have domain knowledge
-- People who understand the product and business strategy
-- Real end users, not only their representatives in your organisation
+- Люди, которые разрабатывают, создают, тестируют программное обеспечение
+- Люди, обладающие знаниями в предметной области
+- Люди, которые понимают продукт и бизнес-стратегию
+- Реальные конечные пользователи, а не только их представители в вашей организации
 
-### Discover
+### Откройте для себя
 
-Discover the domain visually and collaboratively.
+Откройте для себя домен визуально и совместно.
 
-This is the most crucial aspect of DDD. You cannot skip discovery. If your whole team doesn't build up a good understanding of the domain, all software decisions will be misguided.
+Это самый важный аспект DDD. Вы не можете пропустить открытие. Если вся ваша команда не достигнет хорошего понимания предметной области, все программные решения будут ошибочными.
 
-Spreading domain knowledge through the whole team will create a shared understanding. It enables the developers to build a software system aligned to the domain which can be more flexible to incorporate future business changes. 
+Распространение знаний о предметной области среди всей команды создаст общее понимание. Это позволяет разработчикам создавать программную систему, соответствующую предметной области, которая может быть более гибкой для учета будущих изменений в бизнесе.
 
-Ensuring that domain knowledge is spread across the whole team enables its members to contribute with ideas for improving the product.
+Обеспечение распространения знаний о предметной области по всей команде позволяет ее членам вносить свой вклад в идеи по улучшению продукта.
 
 > #### Discovery is Continuous
 >
